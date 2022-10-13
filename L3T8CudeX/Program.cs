@@ -7,6 +7,7 @@ class Program
         double b = Convert.ToInt32(Console.ReadLine());
         double c = Convert.ToInt32(Console.ReadLine());
         double x = 1;
+
         double d = b * b - 4 * a * c;
 
         if (a == 0 && b == 0 && c == 0)
