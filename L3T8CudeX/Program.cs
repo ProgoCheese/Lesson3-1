@@ -1,4 +1,6 @@
 ﻿
+//Квадратное уравнение
+
 class Program
 {
      static void Main()
