@@ -1,26 +1,41 @@
 ﻿//Задача Возраст
-
-class Program
+using System;
+class Sample
 {
-    static void Main(string[] args)
+    class Program
     {
-        int year = Convert.ToInt32(Console.ReadLine());
-        if (year < 20 && year > 10 || year > 110)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Вам " + year + " лет");
+            while (Console.ReadKey().Key != ConsoleKey.Escape)
+            {
+                CheckDatunm();
+            }
         }
-        else if (year % 5 == 0)
+
+        static void CheckDatunm()
         {
-            Console.WriteLine("Вам " + year + " лет");
-        }
-        else if (year % 10 <= 4)
-        {
-            Console.WriteLine("Вам " + year + " года");
-        }
-        else
-        {
-            Console.WriteLine("Вам " + year + " лет");
+            Console.WriteLine("Введите возраст");
+            int year = Convert.ToInt32(Console.ReadLine());
+            if (year < 20 && year > 10 || year > 110)
+            {
+                Console.WriteLine("Вам " + year + " лет");
+            }
+            else if (year % 5 == 0)
+            {
+                Console.WriteLine("Вам " + year + " лет");
+            }
+            else if (year % 10 <= 4)
+            {
+                Console.WriteLine("Вам " + year + " года");
+            }
+            else if (year == 1)
+            {
+                Console.WriteLine("Вам " + year + " год");
+            }
+            else
+            {
+                Console.WriteLine("Вам " + year + " лет");
+            }
         }
     }
 }
-
