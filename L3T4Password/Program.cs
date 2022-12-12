@@ -1,12 +1,12 @@
-﻿
+﻿/// <summary>
+/// Задача Пароль
+/// </summary>
 class Program
 {
     static void Main()
     {
-        //Задача Пароль
-
-        string password = Console.ReadLine();
-        string userPassword = Console.ReadLine();
+        string? password = Console.ReadLine();
+        string? userPassword = Console.ReadLine();
         if (password.Equals(userPassword))
         {
             if (password == userPassword)
@@ -25,6 +25,6 @@ class Program
         else
         {
             Console.WriteLine("пароль неверный и слишком длинный");
-        };
+        }
     }
 }
