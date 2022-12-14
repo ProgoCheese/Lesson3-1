@@ -1,7 +1,5 @@
 ﻿///Задача Следующая дата
 using System;
-class Sample
-{
     class Program
     {
         static void Main()
@@ -19,4 +17,4 @@ class Sample
             }
         }
     }
-}
+
