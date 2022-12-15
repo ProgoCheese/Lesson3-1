@@ -1,13 +1,24 @@
 ﻿//Задача Max/Min
-
-
-int x = Convert.ToInt32(Console.ReadLine());
-int y = Convert.ToInt32(Console.ReadLine());
-if (x > y)
+class Program
 {
-    Console.WriteLine(x + " больше чем " + y);
+    static void Main()
+    {
+        Console.WriteLine("Введите 1 число: ");
+        int firsthNum = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите 2 число: ");
+        int secondNum = Convert.ToInt32(Console.ReadLine());
+        if (firsthNum > secondNum)
+        {
+            Console.WriteLine(firsthNum + " больше чем " + secondNum);
+        }
+        else if(firsthNum = secondNum)
+        {
+            Console.WriteLine(secondNum + " равно" + firsthNum);
+        }
+        else
+        {
+            Console.WriteLine(secondNum + " больше чем " + firsthNum);
+        }
+    }
 }
-else
-{
-    Console.WriteLine(y + " больше чем " + x);
-}
+
