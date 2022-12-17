@@ -1,101 +1,109 @@
 ﻿/// <summary>
 /// Задача Следующая дата
 /// </summary>
-class Sample
+class Program
 {
-    class Program
+    private static bool isDo = true;
+
+    static void Main()
     {
-        static void Main()
+        while (isDo)
         {
-            while (Console.ReadKey().Key != ConsoleKey.Escape)
-            {
-                CheckDatunm();
-            }
+            CheckDatunm();
         }
-        static void CheckDatunm()
+    }
+
+    static void CheckDatunm()
+    {
+        Console.WriteLine("Введите день:");
+        string daytext = Console.ReadLine();
+
+        if (daytext == "n")
         {
-            Console.WriteLine("Введите день:");
-            int day = Convert.ToInt32(Console.ReadLine());
+            isDo = false;
+            return;
+        }
 
-            Console.WriteLine("Введите месяц:");
-            int month = Convert.ToInt32(Console.ReadLine());
+        int day = Convert.ToInt32(daytext);
 
-            Console.WriteLine("Введите год:");
-            int year = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите месяц:");
+        int month = Convert.ToInt32(Console.ReadLine());
 
-            if (day > 0 && month > 0 && month <= 12 && day <= 31 && year >= 0)
+        Console.WriteLine("Введите год:");
+        int year = Convert.ToInt32(Console.ReadLine());
+
+        if (day > 0 && month > 0 && month <= 12 && day <= 31 && year >= 0)
+        {
+            if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10)
             {
-                if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10)
+                day++;
+                if (day == 32)
                 {
-                    day++;
-                    if (day == 32)
-                    {
-                        day = 1;
-                        month++;
-                    }
+                    day = 1;
+                    month++;
                 }
-                else if (month == 12)
+            }
+            else if (month == 12)
+            {
+                day++;
+                if (day == 32)
                 {
-                    day++;
-                    if (day == 32)
-                    {
-                        day = 1;
-                        month = 1;
-                        year++;
-                    }
+                    day = 1;
+                    month = 1;
+                    year++;
                 }
-                else if (month == 2)
+            }
+            else if (month == 2)
+            {
+                if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0)
                 {
-                    if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0)
+                    if (day > 29)
                     {
-                        if (day > 29)
-                        {
-                            Console.WriteLine("Неверная дата");
-                        }
-                        else
-                        {
-                            day++;
-                            if (day == 30)
-                            {
-                                day = 1;
-                                month = 3;
-                            }
-                        }
-
+                        Console.WriteLine("Неверная дата");
                     }
                     else
                     {
-                        if (day > 28)
+                        day++;
+                        if (day == 30)
                         {
-                            Console.WriteLine("Неверная дата");
-                        }
-                        else
-                        {
-                            day++;
-                            if (day == 29)
-                            {
-                                day = 1;
-                                month = 1;
-                            }
+                            day = 1;
+                            month = 3;
                         }
                     }
 
                 }
                 else
                 {
-                    day++;
-                    if (day == 31)
+                    if (day > 28)
                     {
-                        day = 1;
-                        month++;
+                        Console.WriteLine("Неверная дата");
+                    }
+                    else
+                    {
+                        day++;
+                        if (day == 29)
+                        {
+                            day = 1;
+                            month = 1;
+                        }
                     }
                 }
-                Console.WriteLine(day + " " + month + " " + year);
+
             }
             else
             {
-                Console.WriteLine("Неверная дата");
+                day++;
+                if (day == 31)
+                {
+                    day = 1;
+                    month++;
+                }
             }
+            Console.WriteLine(day + " " + month + " " + year);
+        }
+        else
+        {
+            Console.WriteLine("Неверная дата");
         }
     }
 }

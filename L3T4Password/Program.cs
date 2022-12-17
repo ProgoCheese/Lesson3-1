@@ -26,24 +26,21 @@ class Program
             return;
         }
 
-        if (password.Length == userPassword.Length)
+        if (password == userPassword)
         {
-            if (password == userPassword)
-            {
-                Console.WriteLine("пароль верный");
-            }
-            else
-            {
-                Console.WriteLine("пароль неверный");
-            }
+            Console.WriteLine("пароль верный");
         }
         else if (password.Length > userPassword.Length)
         {
             Console.WriteLine("пароль неверный и слишком короткый");
         }
-        else
+        else if (password.Length < userPassword.Length)
         {
             Console.WriteLine("пароль неверный и слишком длинный");
+        }
+        else
+        {
+            Console.WriteLine("пароль неверный");
         }
     }
 }
