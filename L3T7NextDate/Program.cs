@@ -10,6 +10,7 @@ class Program
         while (isDo)
         {
             CheckDatunm();
+            Console.WriteLine();
         }
     }
 
@@ -60,6 +61,7 @@ class Program
                     if (day > 29)
                     {
                         Console.WriteLine("Неверная дата");
+                        return;
                     }
                     else
                     {
@@ -70,13 +72,13 @@ class Program
                             month = 3;
                         }
                     }
-
                 }
                 else
                 {
                     if (day > 28)
                     {
                         Console.WriteLine("Неверная дата");
+                        return;
                     }
                     else
                     {
@@ -88,7 +90,7 @@ class Program
                         }
                     }
                 }
-
+                
             }
             else
             {
@@ -99,11 +101,13 @@ class Program
                     month++;
                 }
             }
-            Console.WriteLine(day + " " + month + " " + year);
+            Console.WriteLine(day + "." + month + "." + year);
         }
         else
         {
             Console.WriteLine("Неверная дата");
         }
+
+        Console.WriteLine();
     }
 }
