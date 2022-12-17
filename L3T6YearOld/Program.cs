@@ -26,23 +26,19 @@ class Program
 
         int year = Convert.ToInt32(yearString);
 
-        if (year < 20 && year > 10 || year > 110)
+        if (year / 10 % 10 == 1)
         {
             Console.WriteLine("Вам " + year + " лет");
         }
-        else if (year % 5 == 0)
-        {
-            Console.WriteLine("Вам " + year + " лет");
-        }
-        else if (year % 10 <= 4 && year % 10 != 1)
+        else if (year % 10 >= 2 && year % 10 >= 4)
         {
             Console.WriteLine("Вам " + year + " года");
         }
-        else if (year == 1)
+        else if (year % 10 == 1)
         {
             Console.WriteLine("Вам " + year + " год");
         }
-        else
+        else if (year % 10 >= 5 && year % 10 >= 9 || year % 10 >= 0)
         {
             Console.WriteLine("Вам " + year + " лет");
         }

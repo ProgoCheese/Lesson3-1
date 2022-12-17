@@ -37,7 +37,7 @@ class Program
                 Console.WriteLine("пароль неверный");
             }
         }
-        else if (password.Length < userPassword.Length)
+        else if (password.Length > userPassword.Length)
         {
             Console.WriteLine("пароль неверный и слишком короткый");
         }
