@@ -1,41 +1,52 @@
-﻿//Задача Возраст
-using System;
-class Sample
+﻿/// <summary>
+/// Задача возрост
+/// </summary>
+class Program
 {
-    class Program
+    private static bool isDo = true;
+
+    static void Main()
     {
-        static void Main(string[] args)
+        while (isDo)
         {
-            while (Console.ReadKey().Key != ConsoleKey.Escape)
-            {
-                CheckDatunm();
-            }
+            CheckDate();
+        }
+    }
+
+    static void CheckDate()
+    {
+        Console.Write("Введите возраст: ");
+
+        string yearString = Console.ReadLine();
+        if (yearString == "n")
+        {
+            isDo = false;
+            return;
         }
 
-        static void CheckDatunm()
+        int year = Convert.ToInt32(yearString);
+
+        if (year < 20 && year > 10 || year > 110)
         {
-            Console.WriteLine("Введите возраст");
-            int year = Convert.ToInt32(Console.ReadLine());
-            if (year < 20 && year > 10 || year > 110)
-            {
-                Console.WriteLine("Вам " + year + " лет");
-            }
-            else if (year % 5 == 0)
-            {
-                Console.WriteLine("Вам " + year + " лет");
-            }
-            else if (year % 10 <= 4)
-            {
-                Console.WriteLine("Вам " + year + " года");
-            }
-            else if (year == 1)
-            {
-                Console.WriteLine("Вам " + year + " год");
-            }
-            else
-            {
-                Console.WriteLine("Вам " + year + " лет");
-            }
+            Console.WriteLine("Вам " + year + " лет");
         }
+        else if (year % 5 == 0)
+        {
+            Console.WriteLine("Вам " + year + " лет");
+        }
+        else if (year % 10 <= 4)
+        {
+            Console.WriteLine("Вам " + year + " года");
+        }
+        else if (year == 1)
+        {
+            Console.WriteLine("Вам " + year + " год");
+        }
+        else
+        {
+            Console.WriteLine("Вам " + year + " лет");
+        }
+
+        Console.WriteLine();
     }
 }
