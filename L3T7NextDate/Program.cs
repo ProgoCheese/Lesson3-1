@@ -90,7 +90,6 @@ class Program
                         }
                     }
                 }
-                
             }
             else
             {
@@ -107,7 +106,5 @@ class Program
         {
             Console.WriteLine("Неверная дата");
         }
-
-        Console.WriteLine();
     }
 }
