@@ -1,5 +1,6 @@
-﻿//Задача Следующая дата
-using System;
+﻿/// <summary>
+/// Задача Следующая дата
+/// </summary>
 class Sample
 {
     class Program
@@ -15,10 +16,13 @@ class Sample
         {
             Console.WriteLine("Введите день:");
             int day = Convert.ToInt32(Console.ReadLine());
+
             Console.WriteLine("Введите месяц:");
             int month = Convert.ToInt32(Console.ReadLine());
+
             Console.WriteLine("Введите год:");
             int year = Convert.ToInt32(Console.ReadLine());
+
             if (day > 0 && month > 0 && month <= 12 && day <= 31 && year >= 0)
             {
                 if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10)
