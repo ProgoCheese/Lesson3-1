@@ -26,7 +26,7 @@ class Program
             return;
         }
 
-        if (password.Equals(userPassword))
+        if (password.Length == userPassword.Length)
         {
             if (password == userPassword)
             {
