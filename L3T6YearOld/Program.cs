@@ -34,7 +34,7 @@ class Program
         {
             Console.WriteLine("Вам " + year + " лет");
         }
-        else if (year % 10 <= 4)
+        else if (year % 10 <= 4 && year != 1)
         {
             Console.WriteLine("Вам " + year + " года");
         }
