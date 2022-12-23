@@ -2,21 +2,24 @@
 {
     static void Main()
     {
-        Console.WriteLine("Введите команду{print,sum}");
-        string a = Console.ReadLine();
-        switch (a)
+        Console.Write("Введите команду{print,sum}: ");
+        string comand = Console.ReadLine();
+
+        switch (comand)
         {
             case "print":
                 Console.WriteLine("Напечатать строчку: ");
-                a = Console.ReadLine();
-                Console.WriteLine(a);
+                comand = Console.ReadLine();
+                Console.WriteLine(comand);
                 break;
             case "sum":
                 Console.WriteLine("Введите число 1:");
-                int c = Convert.ToInt32(Console.ReadLine());
+                int firstNumber = Convert.ToInt32(Console.ReadLine());
+
                 Console.WriteLine("Введите число 2:");
-                int b = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine(c + b);
+                int secondNumber = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine(firstNumber + secondNumber);
                 break;
             default:
                 Console.WriteLine("Неверная команда");
