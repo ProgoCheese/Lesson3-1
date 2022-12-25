@@ -11,7 +11,8 @@ class Program
 
         if (firsthNum > secondNum)
         {
-            Console.WriteLine(firsthNum + " больше чем " + secondNum);
+            Console.WriteLine("наименьшее " + firsthNum);
+            Console.WriteLine("наименьшее " + secondNum);
         }
         else if(firsthNum == secondNum)
         {
@@ -19,13 +20,15 @@ class Program
         }
         else
         {
-            Console.WriteLine(secondNum + " больше чем " + firsthNum);
+            Console.WriteLine("наименьшее " + secondNum);
+            Console.WriteLine("наименьшее " + firsthNum);
         }
-
         int max = (firsthNum > secondNum) ? firsthNum : secondNum;
-        int min = (secondNum + firsthNum) - max;
+        int min = (firsthNum < secondNum) ? firsthNum : secondNum;
 
-        Console.WriteLine(max + " больше чем " + min);
+        Console.WriteLine("Решение при помощи тернарного оператора");
+        Console.WriteLine("наименьшее " + max);
+        Console.WriteLine("наименьшее " + min);
     }
 }
 
