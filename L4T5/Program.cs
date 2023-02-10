@@ -2,40 +2,44 @@
 {
     static void Main()
     {
+        Console.WriteLine("Введите начальное число: ");
+        int beginingNumber = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите начальное число: ");
+        int endingNumber = Convert.ToInt32(Console.ReadLine());
+
         int sum = 0;
-        int i = 1;
-        int endNumber = 2;
-        int numberCount = 0;
+        int countNumber = 0;
+        int i = beginingNumber;
 
-        while (i <= endNumber)
-        {
+
+        while (i <= endingNumber)
+        {            
             sum += i;
-            numberCount++;
-
-            ++i;
+            countNumber++;
+            i++;
         }
 
-        float midNummber = (float)sum / numberCount;
+        double midNumber = (double)sum / countNumber;
 
-        Console.Write(midNummber + " ");
+        Console.WriteLine("Средние арифмитическое " + midNumber);
 
-        sum = 0;
-        i = 3;
-        numberCount = 0;
+        int countNumberEven = 0;
+        i = beginingNumber;
+        int sumEven = 0;
 
-        while (i <= endNumber)
+        while (i <= endingNumber)
         {
+
             if (i % 2 == 0)
             {
-                sum += i;
-                numberCount++;
+                sumEven += i;
+                countNumberEven++;
             }
-
-            ++i;
+            i++;
         }
 
-        midNummber = (float)sum / numberCount;
+        double midNumberEver = (double)sumEven / countNumberEven;
 
-        Console.Write(midNummber);
+        Console.WriteLine("Средние арифмитическое четных " + midNumberEver);
     }
 }

@@ -28,7 +28,7 @@ class Program
         Console.Write("Введите коэффициент c: ");
         double coefficientC = Convert.ToInt32(Console.ReadLine());
         double x;
-        double discriminant = coefficientB * coefficientB - 4 * coefficientA * coefficientC;
+        double discriminant = Math.Pow(coefficientB,2) - 4 * coefficientA * coefficientC;
 
         if (coefficientA == 0 && coefficientB == 0 && coefficientC == 0)
         {
