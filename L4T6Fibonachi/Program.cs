@@ -14,11 +14,11 @@ class Program
         int i = 0;
 
         while(i <= endingNumber)
-        {
-            i++;
+        {           
             sum = deforeTwoNumber + lastNumber;
             lastNumber = deforeTwoNumber;
             deforeTwoNumber = sum;
+            i++;
         }
 
         Console.WriteLine(sum);

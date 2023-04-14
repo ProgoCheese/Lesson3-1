@@ -2,6 +2,21 @@
 {
     static void Main()
     {
+        int i = 0;
+        int j = 0;
+
+        while (i <= 100)
+        {
+            j = 0;
+            while (j < 10 && i <= 100)
+            {
+                j++;
+                Console.Write(i.ToString().PadLeft(5));
+                i++;
+            }
+            Console.WriteLine();
+        }
+
         Console.WriteLine("Введите начальное число: ");
         int beginingNumber = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Введите конечное число: ");
@@ -9,13 +24,13 @@
         Console.WriteLine("Введите количество чисел в строке: ");
         int quantityNumber = Convert.ToInt32(Console.ReadLine());
 
-        int i = beginingNumber;
-        int j = 0;
+        i = beginingNumber;
+         j = 0;
 
         while (i <= endingNumber)
         {
             j = 0;
-            while (j < quantityNumber)
+            while (j < quantityNumber && i <= endingNumber)
             {
                 j++;
                 Console.Write(i.ToString().PadLeft(5));
