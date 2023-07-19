@@ -24,6 +24,20 @@ class Program
         Console.Write("Введите координату y3: ");
         int thirdPointY = Convert.ToInt32(Console.ReadLine());
 
-        //int firstLinePointX = ;
+        if(firstPointX == secondPointX && secondPointX == thirdPointX || firstPointY == secondPointY && secondPointY == thirdPointY)
+        {
+            Console.WriteLine("Площадь не надо вычислять");
+        }
+        else
+        {
+            double firstLine = Math.Sqrt((firstPointY - secondPointY)*(firstPointY - secondPointY) + (firstPointX-secondPointX)*(firstPointX - secondPointX));
+            double secondLine = Math.Sqrt((secondPointY - thirdPointY)*(secondPointY - thirdPointY) + (secondPointX - thirdPointX)*(secondPointX - thirdPointX));
+            double thirdLine = Math.Sqrt((firstPointY - thirdPointY) *(firstPointY - thirdPointY) + (firstPointX- thirdPointX) *(firstPointX - thirdPointX));
+         
+            double halfPerimeter = (firstLine + secondLine + thirdLine)/2;
+
+            double square = Math.Sqrt(halfPerimeter*(halfPerimeter-firstLine)*(halfPerimeter - secondLine) *(halfPerimeter - thirdLine));
+            Console.WriteLine("Площадь треугольника равна {0}", square);
+        }
     }
 }
