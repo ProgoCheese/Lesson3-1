@@ -1,8 +1,12 @@
-﻿class Program
+﻿/// <summary>
+/// 10 чисел в строке
+/// </summary>
+
+class Program
 {
     static void Main()
     {
-        int i = 0;
+        int i = 1;
         int j = 0;
 
         while (i <= 100)
