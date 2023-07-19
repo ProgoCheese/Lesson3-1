@@ -15,37 +15,56 @@ double KofA = Convert.ToInt32(Console.ReadLine());
  */
 class Program
 {
-     static void Main()
+    static void Main()
     {
         Console.WriteLine("Программа находит корни квадратного уравнения типа ах^2 + bх + c = 0 ");
 
         Console.Write("Введите коэффициент a: ");
-        double coefficientA = Convert.ToInt32(Console.ReadLine());
+        double a = Convert.ToInt32(Console.ReadLine());
 
         Console.Write("Введите коэффициент b: ");
-        double coefficientB = Convert.ToInt32(Console.ReadLine());
+        double b = Convert.ToInt32(Console.ReadLine());
 
         Console.Write("Введите коэффициент c: ");
-        double coefficientC = Convert.ToInt32(Console.ReadLine());
-        double x;
-        double discriminant = Math.Pow(coefficientB,2) - 4 * coefficientA * coefficientC;
+        double c = Convert.ToInt32(Console.ReadLine());
 
-        if (coefficientA == 0 && coefficientB == 0 && coefficientC == 0)
+        double d = Math.Pow(b, 2) - 4 * a * c;
+        double x;
+
+        if (b == 0 && c == 0)
         {
-            Console.WriteLine("Нет корня");
+            Console.WriteLine("Корень равен 0");
         }
-        else if (discriminant > 0)
+        else if (b == 0)
         {
-            x = -coefficientB + Math.Sqrt(discriminant) / 2 * coefficientA;
-            double x2 = -coefficientB - Math.Sqrt(discriminant) / 2 * coefficientA;
-            Console.WriteLine("Первый корень равен {0} Второй корень равен {1}",x,x2);
+            x = Math.Sqrt((-1 * c / a));
+            if (-1 * c / a > 0)
+            {
+                x = Math.Sqrt((-1 * c / a));
+                Console.WriteLine("Первый корень равен {0}, второй корень равен {1}", x, -1 * x);
+            }
+            else
+            {
+                Console.WriteLine("Нет корня");
+            }
         }
-        else if (discriminant == 0)
+        else if(c == 0)
         {
-            x = -(coefficientB / 2 * coefficientA);
-            Console.WriteLine("Корень равен {0}",x);
+            x = -1 * b / a;
+            Console.WriteLine("Первый корень равен 0, второй корень равено {0}",x);
         }
-        else if (discriminant < 0)
+        else if (d > 0)
+        {
+            x = -b + Math.Sqrt(d) / 2 * a;
+            double x2 = -b - Math.Sqrt(d) / 2 * a;
+            Console.WriteLine("Первый корень равен {0} Второй корень равен {1}", x, x2);
+        }
+        else if (d == 0)
+        {
+            x = -(b / 2 * a);
+            Console.WriteLine("Корень равен {0}", x);
+        }
+        else if (d < 0)
         {
             Console.WriteLine("Нет корня");
         }
