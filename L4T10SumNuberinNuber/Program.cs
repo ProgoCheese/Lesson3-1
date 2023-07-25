@@ -9,32 +9,33 @@ class Program
         Console.WriteLine("Введите число: ");
         double number = Convert.ToDouble(Console.ReadLine());
 
-        double i = 1;
+
         double j = 0;
         double n = number;
-        double sum = 0;
-        double sumEver = 0;
-        double maxNumber = 0;
 
 
         while (n != 0)
         {
-            n = (int)n/10;
+            n = (int)n / 10;
             j++;
         }
-        Console.WriteLine(j);
-        while(j != -1)
+
+        double sum = 0;
+        double sumEver = 0;
+        double maxNumber = 0;
+
+        while (j != -1)
         {
-            i = (int)number/(int)Math.Pow(10,j);
-            number = number - (int)i * Math.Pow(10, j);
+            double i = (int)number / (int)Math.Pow(10, j);
+            number -= (int)i * Math.Pow(10, j);
             j--;
-            sum = sum + (int)i;
+            sum += (int)i;
             n = i % 2;
-            if(n == 1)
+            if (n == 1)
             {
-                sumEver = sumEver + i;
+                sumEver += i;
             }
-            if(maxNumber < i)
+            if (maxNumber < i)
             {
                 maxNumber = i;
             }
