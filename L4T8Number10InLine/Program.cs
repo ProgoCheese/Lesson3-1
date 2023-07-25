@@ -7,7 +7,7 @@ class Program
     static void Main()
     {
         int i = 1;
-        int j = 0;
+        int j;
 
         while (i <= 100)
         {
@@ -29,7 +29,6 @@ class Program
         int quantityNumber = Convert.ToInt32(Console.ReadLine());
 
         i = beginingNumber;
-         j = 0;
 
         while (i <= endingNumber)
         {
