@@ -9,10 +9,8 @@ class Program
         Console.WriteLine("Введите число: ");
         double number = Convert.ToDouble(Console.ReadLine());
 
-
         double j = 0;
         double n = number;
-
 
         while (n != 0)
         {
