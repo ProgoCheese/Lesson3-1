@@ -48,15 +48,15 @@ class Program
                 Console.WriteLine("Нет корня");
             }
         }
-        else if(c == 0)
+        else if (c == 0)
         {
             x = -1 * b / a;
-            Console.WriteLine("Первый корень равен 0, второй корень равено {0}",x);
+            Console.WriteLine("Первый корень равен 0, второй корень равено {0}", x);
         }
         else if (d > 0)
         {
-            x = -b + Math.Sqrt(d) / 2 * a;
-            double x2 = -b - Math.Sqrt(d) / 2 * a;
+            x = (-b + Math.Sqrt(d)) / 2 * a;
+            double x2 = (-b - Math.Sqrt(d)) / 2 * a;
             Console.WriteLine("Первый корень равен {0} Второй корень равен {1}", x, x2);
         }
         else if (d == 0)
@@ -68,5 +68,7 @@ class Program
         {
             Console.WriteLine("Нет корня");
         }
+
+
     }
 }
