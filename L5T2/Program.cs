@@ -29,12 +29,14 @@ class Program
         int y = Convert.ToInt32(Console.ReadLine());
 
         int sum = 0;
+        int j = 0;
 
         for (int i = x; i <= y; i++)
         {       
-            sum += i;     
+            sum += i;    
+            j++;
         }
-        n = (double)sum / (double)(y - x + 1);
+        n = (double)sum / (double)j;
         Console.WriteLine(n);
     }
 }
