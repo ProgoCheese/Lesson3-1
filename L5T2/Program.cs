@@ -36,7 +36,9 @@ class Program
             sum += i;    
             j++;
         }
+
         n = (double)sum / (double)j;
+
         Console.WriteLine(n);
     }
 }
