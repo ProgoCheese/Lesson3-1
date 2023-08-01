@@ -29,18 +29,21 @@ class Program
         double c = Convert.ToInt32(Console.ReadLine());
 
         double d = Math.Pow(b, 2) - 4 * a * c;
-        double x;
 
-        if (b == 0 && c == 0)
+        if (a == 0)
+        {
+            double x = c / b;
+            Console.WriteLine("Корень равен {0}", x);
+        }
+        else if (b == 0 && c == 0)
         {
             Console.WriteLine("Корень равен 0");
         }
         else if (b == 0)
         {
-            x = Math.Sqrt((-1 * c / a));
             if (-1 * c / a > 0)
             {
-                x = Math.Sqrt((-1 * c / a));
+                double x = Math.Sqrt((-1 * c / a));
                 Console.WriteLine("Первый корень равен {0}, второй корень равен {1}", x, -1 * x);
             }
             else
@@ -50,18 +53,18 @@ class Program
         }
         else if (c == 0)
         {
-            x = -1 * b / a;
+            double x = -1 * b / a;
             Console.WriteLine("Первый корень равен 0, второй корень равено {0}", x);
         }
         else if (d > 0)
         {
-            x = (-b + Math.Sqrt(d)) / 2 * a;
+            double x = (-b + Math.Sqrt(d)) / 2 * a;
             double x2 = (-b - Math.Sqrt(d)) / 2 * a;
             Console.WriteLine("Первый корень равен {0} Второй корень равен {1}", x, x2);
         }
         else if (d == 0)
         {
-            x = -(b / 2 * a);
+            double x = -(b / 2 * a);
             Console.WriteLine("Корень равен {0}", x);
         }
         else if (d < 0)
