@@ -1,4 +1,8 @@
-﻿class Program
+﻿/// <summary>
+/// Простые числа
+/// </summary>
+
+class Program
 {
     static void Main()
     {
