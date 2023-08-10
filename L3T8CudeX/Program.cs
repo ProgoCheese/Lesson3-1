@@ -56,18 +56,18 @@ class Program
             double x = -1 * b / a;
             Console.WriteLine("Первый корень равен 0, второй корень равено {0}", x);
         }
-        else if (discriminant > 0)
+        else if (discriminant > double.Epsilon)
         {
             double x = (-b + Math.Sqrt(discriminant)) / 2 * a;
             double x2 = (-b - Math.Sqrt(discriminant)) / 2 * a;
             Console.WriteLine("Первый корень равен {0} Второй корень равен {1}", x, x2);
         }
-        else if (discriminant == 0)
+        else if (discriminant <= double.Epsilon && -1 * discriminant >= -1 * double.Epsilon)
         {
             double x = -(b / 2 * a);
             Console.WriteLine("Корень равен {0}", x);
         }
-        else if (discriminant < 0)
+        else if (discriminant < -1 * double.Epsilon)
         {
             Console.WriteLine("Нет корня");
         }
