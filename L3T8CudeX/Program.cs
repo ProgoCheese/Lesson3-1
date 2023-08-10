@@ -28,11 +28,11 @@ class Program
         Console.Write("Введите коэффициент c: ");
         double c = Convert.ToInt32(Console.ReadLine());
 
-        double d = Math.Pow(b, 2) - 4 * a * c;
+        double discriminant = Math.Pow(b, 2) - 4 * a * c;
 
         if (a == 0)
         {
-            double x = c / b;
+            double x = -1 * c / b;
             Console.WriteLine("Корень равен {0}", x);
         }
         else if (b == 0 && c == 0)
@@ -56,18 +56,18 @@ class Program
             double x = -1 * b / a;
             Console.WriteLine("Первый корень равен 0, второй корень равено {0}", x);
         }
-        else if (d > 0)
+        else if (discriminant > 0)
         {
-            double x = (-b + Math.Sqrt(d)) / 2 * a;
-            double x2 = (-b - Math.Sqrt(d)) / 2 * a;
+            double x = (-b + Math.Sqrt(discriminant)) / 2 * a;
+            double x2 = (-b - Math.Sqrt(discriminant)) / 2 * a;
             Console.WriteLine("Первый корень равен {0} Второй корень равен {1}", x, x2);
         }
-        else if (d == 0)
+        else if (discriminant == 0)
         {
             double x = -(b / 2 * a);
             Console.WriteLine("Корень равен {0}", x);
         }
-        else if (d < 0)
+        else if (discriminant < 0)
         {
             Console.WriteLine("Нет корня");
         }
