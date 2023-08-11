@@ -8,7 +8,6 @@ class Program
         double temperature = PrintAndRead("Введите температуру в Цельсиях:");
         CelsiusToKelvin(temperature);
         CelsiusToFahrenheit(temperature);
-
     }
 
     private static void CelsiusToKelvin(double celsius)
