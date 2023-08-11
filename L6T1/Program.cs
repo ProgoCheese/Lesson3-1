@@ -13,13 +13,17 @@ class Program
         CalculateExpression(x, y);
 
         // Функция для вычисления среднего арифметического
+        Console.WriteLine("Введите значение x:");
         x = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите значение y:");
         y = Convert.ToDouble(Console.ReadLine());
 
         CalculateAverage(x, y);
 
         // Функция для вычисления минимума и максимума
+        Console.WriteLine("Введите значение x:");
         x = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите значение y:");
         y = Convert.ToDouble(Console.ReadLine());
 
         CalculateMin(x, y);
