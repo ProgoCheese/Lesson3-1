@@ -28,9 +28,7 @@ class Program
             {
                 int x = j * i;
 
-                Console.Write(x.ToString().PadRight(3,' '));
-
-                Console.Write("|");
+                Console.Write(x.ToString().PadRight(4,' '));
             }
             Console.WriteLine();
         }
