@@ -30,6 +30,8 @@ class Program
 
         double discriminant = Math.Pow(b, 2) - 4 * a * c;
 
+        double epsilon = 1.0e-10;
+
         if (a == 0)
         {
             double x = -1 * c / b;
@@ -56,18 +58,18 @@ class Program
             double x = -1 * b / a;
             Console.WriteLine("Первый корень равен 0, второй корень равено {0}", x);
         }
-        else if (discriminant > double.Epsilon)
+        else if (discriminant > epsilon)
         {
             double x = (-b + Math.Sqrt(discriminant)) / 2 * a;
             double x2 = (-b - Math.Sqrt(discriminant)) / 2 * a;
             Console.WriteLine("Первый корень равен {0} Второй корень равен {1}", x, x2);
         }
-        else if (discriminant <= double.Epsilon && -1 * discriminant >= -1 * double.Epsilon)
+        else if (discriminant <= epsilon && -1 * discriminant >= -1 * epsilon)
         {
             double x = -(b / 2 * a);
             Console.WriteLine("Корень равен {0}", x);
         }
-        else if (discriminant < -1 * double.Epsilon)
+        else if (discriminant < -1 * epsilon)
         {
             Console.WriteLine("Нет корня");
         }
