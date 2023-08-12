@@ -9,11 +9,20 @@ class Program
         Console.WriteLine("Введите число");
         int number = Convert.ToInt32(Console.ReadLine());
 
-        for(int i = 0; i <= number; i++)
-        {
-            Console.Write(i.ToString().PadRight(3, ' '));
+        Console.Write("   |");
 
-            Console.Write("|");
+        for(int i = 1; i <= number; i++)
+        {
+            Console.Write(i.ToString().PadRight(4, ' '));
+        }
+
+        Console.WriteLine("");
+
+        Console.Write("---+");
+
+        for (int i = 0; i <= number; i++)
+        {
+            Console.Write("----");
         }
 
         Console.WriteLine();
