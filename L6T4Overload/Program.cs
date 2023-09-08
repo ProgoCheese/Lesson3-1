@@ -1,6 +1,7 @@
 ﻿/// <summary>
 /// Задача «Стоимость заказа»
 /// </summary>
+
 class Program
 {
     static void Main()
@@ -12,40 +13,41 @@ class Program
         float f = 5.0f;
         double d = 6.0;
 
-        Console.WriteLine("Размер byte: " + GetTypeSize(b));
-        Console.WriteLine("Размер short: " + GetTypeSize(s));
-        Console.WriteLine("Размер int: " + GetTypeSize(i));
-        Console.WriteLine("Размер long: " + GetTypeSize(l));
-        Console.WriteLine("Размер float: " + GetTypeSize(f));
-        Console.WriteLine("Размер double: " + GetTypeSize(d));
-    }
-    static int GetTypeSize(byte value)
-    {
-        return sizeof(byte);
+        GetTypeSize(b);
+        GetTypeSize(s);
+        GetTypeSize(i);
+        GetTypeSize(l);
+        GetTypeSize(f);
+        GetTypeSize(d);
     }
 
-    static int GetTypeSize(short value)
+    static void GetTypeSize(byte value)
     {
-        return sizeof(short);
+        Console.WriteLine("Размер byte: 1");
     }
 
-    static int GetTypeSize(int value)
+    static void GetTypeSize(short value)
     {
-        return sizeof(int);
+        Console.WriteLine("Размер short: 2");
     }
 
-    static int GetTypeSize(long value)
+    static void GetTypeSize(int value)
     {
-        return sizeof(long);
+        Console.WriteLine("Размер int: 4");
     }
 
-    static int GetTypeSize(float value)
+    static void GetTypeSize(long value)
     {
-        return sizeof(float);
+        Console.WriteLine("Размер long: 8");
     }
 
-    static int GetTypeSize(double value)
+    static void GetTypeSize(float value)
     {
-        return sizeof(double);
+        Console.WriteLine("Размер float: 4");
+    }
+
+    static void GetTypeSize(double value)
+    {
+        Console.WriteLine("Размер double: 8");
     }
 }
