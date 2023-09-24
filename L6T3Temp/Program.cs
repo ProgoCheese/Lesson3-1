@@ -6,18 +6,20 @@ class Program
     static void Main()
     {
         double temperature = PrintAndRead("Введите температуру в Цельсиях:");
-        CelsiusToKelvin(temperature);
-        CelsiusToFahrenheit(temperature);
+        double kelvin = CelsiusToKelvin(temperature);
+        double fahrenheit = CelsiusToFahrenheit(temperature);
+
+        Console.WriteLine("Кельвины = {0} , фаренгейты = {1}", kelvin, fahrenheit);
     }
 
-    private static void CelsiusToKelvin(double celsius)
+    private static double CelsiusToKelvin(double celsius)
     {
-        Console.WriteLine(celsius + 273.15);
+        return celsius + 273.15;
     }
 
-    private static void CelsiusToFahrenheit(double celsius)
+    private static double CelsiusToFahrenheit(double celsius)
     {
-        Console.WriteLine(celsius * 9 / 5 + 32);
+        return celsius * 9 / 5 + 32;
     }
 
     public static double PrintAndRead(string prompt)
