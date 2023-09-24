@@ -13,10 +13,11 @@ class Program
 
         double priceAll = priceFirst * quantityFirst + priceSecondt * quantitySecond;
 
-        CalculationDiscount(quantityFirst, quantitySecond, priceAll);
+        double disount = CalculationDiscount(quantityFirst, quantitySecond, priceAll);
+        Console.WriteLine(disount*priceAll);
     }
 
-    public static void CalculationDiscount(double quantityFirst, double quantitySecond, double priceAll)
+    public static double CalculationDiscount(double quantityFirst, double quantitySecond, double priceAll)
     {
         double discount = 1;
 
@@ -33,7 +34,7 @@ class Program
             discount = 0.95;
         }
 
-        Console.WriteLine("Стоймость заказа составила {0}", priceAll* discount);
+        return discount;
     }
 
     public static int PrintAndRead(string prompt)
