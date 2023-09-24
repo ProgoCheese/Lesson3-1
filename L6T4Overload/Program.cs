@@ -13,41 +13,52 @@ class Program
         float f = 5.0f;
         double d = 6.0;
 
-        GetTypeSize(b);
-        GetTypeSize(s);
-        GetTypeSize(i);
-        GetTypeSize(l);
-        GetTypeSize(f);
-        GetTypeSize(d);
+        int size = GetTypeSize(b);
+        Console.WriteLine(size);
+
+        size = GetTypeSize(s);
+        Console.WriteLine(size);
+
+        size = GetTypeSize(i);
+        Console.WriteLine(size);
+
+        size = GetTypeSize(l);
+        Console.WriteLine(size);
+
+        size = GetTypeSize(f);
+        Console.WriteLine(size);
+
+        size = GetTypeSize(d);
+        Console.WriteLine(size);
     }
 
-    static void GetTypeSize(byte value)
+    static int GetTypeSize(byte value)
     {
-        Console.WriteLine("Размер byte: 1");
+        return 1;
     }
 
-    static void GetTypeSize(short value)
+    static int GetTypeSize(short value)
     {
-        Console.WriteLine("Размер short: 2");
+        return 2;
     }
 
-    static void GetTypeSize(int value)
+    static int GetTypeSize(int value)
     {
-        Console.WriteLine("Размер int: 4");
+        return 4;
     }
 
-    static void GetTypeSize(long value)
+    static int GetTypeSize(long value)
     {
-        Console.WriteLine("Размер long: 8");
+        return 8;
     }
 
-    static void GetTypeSize(float value)
+    static int GetTypeSize(float value)
     {
-        Console.WriteLine("Размер float: 4");
+        return 4;
     }
 
-    static void GetTypeSize(double value)
+    static int GetTypeSize(double value)
     {
-        Console.WriteLine("Размер double: 8");
+        return 8;
     }
 }
