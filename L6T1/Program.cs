@@ -10,7 +10,7 @@ class Program
         Console.WriteLine("Введите значение y:");
         double y = Convert.ToDouble(Console.ReadLine());
 
-        CalculateExpression(x, y);  
+        GetExpression(x, y);  
 
         // Функция для вычисления среднего арифметического
         Console.WriteLine("Введите значение x:");
@@ -18,7 +18,7 @@ class Program
         Console.WriteLine("Введите значение y:");
         y = Convert.ToDouble(Console.ReadLine());
 
-        CalculateAverageValue(x, y);
+        GetAverageValue(x, y);
 
         // Функция для вычисления минимума и максимума
         Console.WriteLine("Введите значение x:");
@@ -26,17 +26,17 @@ class Program
         Console.WriteLine("Введите значение y:");
         y = Convert.ToDouble(Console.ReadLine());
 
-        CalculateMinNumber(x, y);
-        CalculateMaxNumber(x, y);
+        GetMinNumber(x, y);
+        GetMaxNumber(x, y);
     }
 
-    static void CalculateExpression(double x, double y)
+    static void GetExpression(double x, double y)
     {
         double result = 3 * x + 4 * y;
         Console.WriteLine($"Результат вычисления 3x + 4y = {result}");
     }
 
-    static void CalculateAverageValue(double begin, double end)
+    static void GetAverageValue(double begin, double end)
     {
         double sum = 0;
         for (double i = begin; i <= end; i++)
@@ -47,13 +47,13 @@ class Program
         Console.WriteLine($"Среднее арифметическое чисел от {begin} до {end}: {average}");
     }
 
-    static void CalculateMinNumber(double a, double b)
+    static void GetMinNumber(double a, double b)
     {
         double min = a < b ? a : b;
         Console.WriteLine($"Минимум из {a} и {b}: {min}");
     }
 
-    static void CalculateMaxNumber(double a, double b)
+    static void GetMaxNumber(double a, double b)
     {
         double max = a > b ? a : b;
         Console.WriteLine($"Максимум из {a} и {b}: {max}");
