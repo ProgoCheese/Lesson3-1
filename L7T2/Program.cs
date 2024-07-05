@@ -15,7 +15,7 @@
 
             Range userRange = new Range(firstNumber, secondNumber);
 
-            Console.WriteLine($"Длина: {userRange.GetLength}");
+            Console.WriteLine($"Длина: {userRange.GetLength()}");
 
             Console.WriteLine("Введите число: ");
             double userNumber = Convert.ToDouble(Console.ReadLine());

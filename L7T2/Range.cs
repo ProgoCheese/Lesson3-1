@@ -13,8 +13,8 @@ namespace Lesson3_1
 
         public Range(double userFrom, double userTo)
         {
-            this.from = userFrom;
-            this.to = userTo;
+            from = userFrom;
+            to = userTo;
         }
 
         //На самом деле если мы принимаем 2 вещественных числа то количество будет бесконечно т.к. вещественных бесконечно
@@ -26,12 +26,12 @@ namespace Lesson3_1
         //Или просто объясни в чем прикол
         public double GetLength()
         {
-            return this.to - this.from + 1;
+            return to - from;
         }
 
         public bool IsInside(double number)
         {
-            if (number > this.from && number < this.to)
+            if (number > from && number < to)
             {
                 return true;
             }
