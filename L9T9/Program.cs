@@ -12,9 +12,6 @@ namespace Lesson3_1
         {
             int[] arr = { 1, 2, 6, 2, 8, 9, 12, 945, 23,4 };
 
-            int sum = 0;
-            int count = 0;
-
             int halfLegth = (arr.Length + arr.Length % 2) / 2;
 
             for (int i = 0; i < halfLegth; i++)
