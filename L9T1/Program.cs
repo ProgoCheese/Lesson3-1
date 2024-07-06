@@ -11,7 +11,7 @@
 
             for (int i = 1; i <= arr.Length; i++)
             {
-                arr[i - 1] = i;
+                    arr[i - 1] = i;
             }
 
             foreach (int e in arr)
