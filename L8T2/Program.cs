@@ -8,7 +8,7 @@
         static void Main()
         {
             Console.WriteLine("Введите строку: ");
-            string userString = Console.ReadLine();
+            string userString = Console.ReadLine()!;
 
             int maxString = 0;
             int currentMax = 1;
@@ -27,7 +27,7 @@
                     if (maxString < currentMax)
                     {
                         maxString = currentMax;
-                        currentMax = 0;
+                        currentMax = 1;
                     }
                 }
             }
