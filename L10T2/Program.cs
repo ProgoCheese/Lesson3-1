@@ -1,22 +1,19 @@
-﻿using System.Data.SqlTypes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     /// <summary>
     /// нод
     /// </summary>
     class Program
     {
-        public static int GetNOD(int a, int b)
+        public static int GetGCF(int a, int b)
         {
-            if(a % b == 0)
+            if (a % b == 0)
             {
                 return b;
             }
             else
             {
-                return GetNOD(b, a%b);
+                return GetGCF(b, a % b);
             }
         }
 
@@ -26,7 +23,7 @@ namespace Lesson3_1
             int a = Convert.ToInt32(Console.ReadLine());
             int b = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine(GetNOD(a, b));
+            Console.WriteLine("Их НОД равен " + GetGCF(a, b));
         }
     }
 }
