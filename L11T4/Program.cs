@@ -1,24 +1,19 @@
-﻿using System.Data.SqlTypes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     /// <summary>
     /// нод
     /// </summary>
     class Program
     {
-        public static void SortArr(int[] a)
+        public static void SortArray(int[] array)
         {
-            for (int i = 1; i < a.Length; i++)
+            for (int i = 1; i < array.Length; i++)
             {
                 for (int j = i; j > 0; j--)
                 {
-                    if (a[j] < a[j - 1])
+                    if (array[j] < array[j - 1])
                     {
-                        int temp = a[j];
-                        a[j] = a[j - 1];
-                        a[j - 1] = temp;
+                        (array[j], array[j - 1]) = (array[j - 1], array[j]);
                     }
                 }
             }
@@ -26,13 +21,19 @@ namespace Lesson3_1
 
         static void Main()
         {
-            int[] a = { 2, 5, 8, 1, 32, 975, 23, 0, 42, 66 };
+            int[] array = [2, 5, 8, 1, 32, 975, 23, 0, 42, 66];
 
-            SortArr(a);
+            foreach (int i in array)
+            {
+                Console.Write(i + " ");
+            }
+
+            SortArray(array);
 
             Console.WriteLine();
+            Console.WriteLine("Отсортированный массив:");
 
-            foreach (int i in a)
+            foreach (int i in array)
             {
                 Console.Write(i + " ");
             }
