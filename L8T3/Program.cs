@@ -9,18 +9,28 @@
         {
             Console.WriteLine("Введите строку: ");
             string userString = Console.ReadLine()!;
-            Console.WriteLine(userString);
 
-            int spaceKoefLeft = 0;
-            int spaceKoefRight = 0;
-            int halfLegth = (userString.Length + userString.Length % 2) / 2;
+            int left = 0;
+            int right = userString.Length - 1;
 
             bool isPalindrom = true;
 
-            for (int i = 0; i < halfLegth; i++)
+            while (left <= right)
             {
-                char leftChar = userString[i];
-                char rightChar = userString[userString.Length - 1 - i];
+                char leftChar = userString[left];
+                char rightChar = userString[right];
+
+                while (!char.IsLetterOrDigit(leftChar))
+                {
+                    left++;
+                    leftChar = userString[left];
+                }
+
+                while (!char.IsLetterOrDigit(rightChar))
+                {
+                    right--;
+                    rightChar = userString[right];
+                }
 
                 if (char.ToLower(leftChar) != char.ToLower(rightChar))
                 {
@@ -28,6 +38,9 @@
                     //Console.WriteLine(leftChar + " = " + rightChar);
                     break;
                 }
+
+                left++;
+                right--;
             }
 
             if (isPalindrom)
