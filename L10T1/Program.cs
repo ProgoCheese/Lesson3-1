@@ -1,29 +1,27 @@
-﻿using System.Data.SqlTypes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     /// <summary>
     /// pow 
     /// </summary>
     class Program
     {
-        public static int GetPowRek(int x, int pow)
+        public static int GetPowRek(int number, int degree)
         {
-            if(pow == 1)
+            if (degree == 1)
             {
-                return x;
+                return number;
             }
 
-            return GetPowRek(x, pow - 1) * x;
+            return GetPowRek(number, degree - 1) * number;
         }
 
-        public static int GetPowFor(int x, int pow)
+        public static int GetPowFor(int number, int degree)
         {
             int ans = 1;
 
-            for (int i = 0; i < pow; i++) { 
-                ans *= x;
+            for (int i = 0; i < degree; i++)
+            {
+                ans *= number;
             }
 
             return ans;
@@ -32,11 +30,12 @@ namespace Lesson3_1
         static void Main()
         {
             Console.WriteLine("Введите число и его степень");
-            int x = Convert.ToInt32(Console.ReadLine());
-            int pow = Convert.ToInt32(Console.ReadLine());
+            int number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите степень");
+            int degree = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine(GetPowRek(x, pow));
-            Console.WriteLine(GetPowFor(x, pow));
+            Console.WriteLine("Число в степени равно = " + GetPowRek(number, degree));
+            Console.WriteLine("Число в степени равно = " + GetPowFor(number, degree));
         }
     }
 }
