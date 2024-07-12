@@ -1,34 +1,48 @@
-﻿using System.Data.SqlTypes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     /// <summary>
     /// сортировка
     /// </summary>
     class Program
     {
-        static void Main()
+        public static bool IsGrowingArray(int[] array)
         {
-            int[] arr = { 1, 2, 3, 4, 8, 9, 12, 945};
+            bool isGrowingArray = true;
 
-            bool isUpArr = true;
-            bool isDownArr = true;
-
-            for (int i = 1; i < arr.Length; i++)
+            for (int i = 1; i < array.Length; i++)
             {
-                if (arr[i] >= arr[i - 1])
+                if (array[i] <= array[i - 1])
                 {
-                    isDownArr = false;
-                }
-
-                if (arr[i] <= arr[i - 1])
-                {
-                    isUpArr = false;
+                    isGrowingArray = false;
                 }
             }
 
-            Console.WriteLine($"массив возрастает: {isUpArr}, он убывает: {isDownArr}");
+            return isGrowingArray;
+        }
+
+        public static bool IsDescendingArray(int[] array)
+        {
+            bool isGrowingArray = true;
+
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i] <= array[i - 1])
+                {
+                    isGrowingArray = false;
+                }
+            }
+
+            return isGrowingArray;
+        }
+
+        static void Main()
+        {
+            int[] array = { 1, 2, 3, 4, 8, 9, 12, 945};
+
+            bool isGrowingArray = IsGrowingArray(array);
+            bool isDescendingArray = IsDescendingArray(array);
+
+            Console.WriteLine($"массив возрастает: {isGrowingArray}, он убывает: {isDescendingArray}");
         }
     }
 }
