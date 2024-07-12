@@ -1,7 +1,4 @@
-﻿using System.Data.SqlTypes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     /// <summary>
     /// AM
@@ -10,18 +7,27 @@ namespace Lesson3_1
     {
         static void Main()
         {
-            int[] arr = { 1, 2, 6, 2, 8, 9, 12, 945, 23,4 };
+            int[] array = { 1, 2, 6, 2, 8, 9, 12, 945, 23, 4 };
 
-            int halfLegth = (arr.Length + arr.Length % 2) / 2;
+            int halfLength = 0;
 
-            for (int i = 0; i < halfLegth; i++)
+            if (array.Length % 2 == 0)
             {
-                int a = arr[i];
-                arr[i] = arr[arr.Length - 1 - i];
-                arr[arr.Length - 1 - i] = a;
+                halfLength = array.Length / 2;
+            }
+            else
+            {
+                halfLength = (array.Length + 1) / 2;
             }
 
-            foreach(int e in arr)
+            for (int i = 0; i < halfLength; i++)
+            {
+                int a = array[i];
+                array[i] = array[array.Length - 1 - i];
+                array[array.Length - 1 - i] = a;
+            }
+
+            foreach (int e in array)
             {
                 Console.Write(e + " ");
             }
