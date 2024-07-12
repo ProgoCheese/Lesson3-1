@@ -7,16 +7,16 @@
     {
         static void Main()
         {
-            int[] arr = new int[100];
+            int[] array = new int[100];
 
-            for (int i = 1; i <= arr.Length; i++)
+            for (int i = 1; i <= array.Length; i++)
             {
-                    arr[i - 1] = i;
+                array[i - 1] = i;
             }
 
-            foreach (int e in arr)
+            foreach (int element in array)
             {
-                Console.WriteLine(e);
+                Console.WriteLine(element);
             }
         }
     }

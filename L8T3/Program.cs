@@ -8,9 +8,7 @@
         static void Main()
         {
             Console.WriteLine("Введите строку: ");
-            string userString = Console.ReadLine();
-            userString = userString.Replace(" ",String.Empty);
-            userString = userString.Replace(",",String.Empty);
+            string userString = Console.ReadLine()!;
             Console.WriteLine(userString);
 
             int spaceKoefLeft = 0;
