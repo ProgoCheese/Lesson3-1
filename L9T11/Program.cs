@@ -1,5 +1,5 @@
 ﻿using System.Data.SqlTypes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using System;
 
 namespace Lesson3_1
 {
@@ -8,31 +8,36 @@ namespace Lesson3_1
     /// </summary>
     class Program
     {
-        public static void SetMultiplicationTable(int[,] arr, int x)
+        public static int[,] SetMultiplicationTable(int x, int y)
         {
-            for(int i = 0; i < x; i++)
+            int[,] array = new int[x, y];
+
+            for (int i = 0; i < x; i++)
             {
-                for(int j = 0; j < x; j++)
+                for (int j = 0; j < y; j++)
                 {
-                    arr[i, j] = (i + 1) * (j + 1);
+                    array[i, j] = (i + 1) * (j + 1);
                 }
             }
+
+            return array;
         }
 
         static void Main()
         {
-            Console.WriteLine("Введите размеры таблицы");
-            int x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите размеры таблицы умножения");
+            var length = Console.ReadLine();
+            int tableLength = !String.IsNullOrEmpty(length) ? Convert.ToInt32(length) : 0;
+            var width = Console.ReadLine();
+            int tableWidth = !String.IsNullOrEmpty(width) ? Convert.ToInt32(width) : 0;
 
-            int[,] arr = new int[x,x];
+            int[,] array = SetMultiplicationTable(tableLength, tableWidth);
 
-            SetMultiplicationTable(arr, x);
-
-            for (int i = 0; i < x; i++)
+            for (int i = 0; i < tableLength; i++)
             {
-                for (int j = 0; j < x; j++)
+                for (int j = 0; j < tableWidth; j++)
                 {
-                    Console.Write(arr[i, j] + " ");
+                    Console.Write(array[i, j] + " ");
                 }
                 Console.WriteLine();
             }
