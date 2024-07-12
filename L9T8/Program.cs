@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     /// <summary>
     /// AM
@@ -9,18 +7,18 @@ namespace Lesson3_1
     {
         static void Main()
         {
-            int[] arr = {1,2,6,2,8,9,12,945,23};
+            int[] array = { 1, 2, 6, 2, 8, 9, 12, 945, 23 };
 
             int sum = 0;
             int count = 0;
 
-            foreach (int e in arr)
+            foreach (int e in array)
             {
-                if(e % 2 == 0)
+                if (e % 2 == 0)
                 {
                     sum += e;
                     count++;
-                }                
+                }
             }
 
             Console.WriteLine(sum / count);
