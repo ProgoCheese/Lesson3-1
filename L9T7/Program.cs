@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     /// <summary>
     /// max
@@ -10,18 +8,18 @@ namespace Lesson3_1
         public static void GetUpperstring(string[] s)
         {
             for (int i = 0; i < s.Length; i++)
-            { 
+            {
                 s[i] = s[i].ToUpper();
             }
         }
 
         static void Main()
         {
-            string[] arr = { " dafiEeijd ", " ФУАщрф ", " FWEFFSEFsf ", " zsdfGFsd ", " SEsdAEDg ", "afdagas " };
+            string[] array = { " dafiEeijd ", " ФУАщрф ", " FWEFFSEFsf ", " zsdfGFsd ", " SEsdAEDg ", "afdagas " };
 
-            GetUpperstring(arr);
+            GetUpperstring(array);
 
-            foreach (string e in arr)
+            foreach (string e in array)
             {
                 Console.Write(e);
             }
