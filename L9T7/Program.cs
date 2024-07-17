@@ -5,7 +5,7 @@
     /// </summary>
     class Program
     {
-        public static void GetUpperstring(string[] s)
+        public static void GetUpperString(string[] s)
         {
             for (int i = 0; i < s.Length; i++)
             {
@@ -17,13 +17,12 @@
         {
             string[] array = { " dafiEeijd ", " ФУАщрф ", " FWEFFSEFsf ", " zsdfGFsd ", " SEsdAEDg ", "afdagas " };
 
-            GetUpperstring(array);
+            GetUpperString(array);
 
             foreach (string e in array)
             {
                 Console.Write(e);
             }
-
         }
     }
 }
