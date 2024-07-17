@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "L9T3": {
+      "commandName": "Project",
+      "commandLineArgs": "input.txt output file.txt аргумент"
+    }
+  }
+}
