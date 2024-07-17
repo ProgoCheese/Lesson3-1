@@ -26,7 +26,7 @@
 
             for (int i = 1; i < array.Length; i++)
             {
-                if (array[i] <= array[i - 1])
+                if (array[i] >= array[i - 1])
                 {
                     isGrowingArray = false;
                 }
