@@ -22,7 +22,7 @@ namespace Lesson3_1
             return max;
         }
 
-        public static int SearchNumber(double[] array, double number)
+        public static int GetIdNumber(double[] array, double number)
         {
             int findedNumber = -1;
 
@@ -39,20 +39,39 @@ namespace Lesson3_1
 
         static void Main()
         {
-            double[] array = { 1, 6, 2, 0, 53, 1, 55, 32 };
+            double[] array = [1, 6, 2, 0, 53, 1, 55, 32];
 
             Console.WriteLine("Введите число: ");
-            double number = Convert.ToDouble(Console.ReadLine());
-            double max = SearchMax(array);
+            string userString = Console.ReadLine()!;
+            bool isNumeric = true;
 
-            int findedNumber = SearchNumber(array, number);
-
-            foreach (double e in array)
+            foreach (char c in userString)
             {
-                Console.Write(e+" ");
+                if (!char.IsDigit(c))
+                {
+                    isNumeric = false;
+                    break;
+                }
             }
 
-            Console.WriteLine($"Максимум {max}, нужное число индекс {findedNumber}");
+            if (!isNumeric || userString == "")
+            {
+                Console.WriteLine("Значит не судьба");
+            }
+            else
+            {
+                double number = Convert.ToDouble(userString);
+                double maxNumber = SearchMax(array);
+
+                int idNumber = GetIdNumber(array, number);
+
+                foreach (double e in array)
+                {
+                    Console.Write(e + " ");
+                }
+
+                Console.WriteLine($"Максимум {maxNumber}, нужное число индекс {idNumber}");
+            }
         }
     }
 }
