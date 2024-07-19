@@ -5,7 +5,7 @@
     /// </summary>
     class Program
     {
-        public static int GetGCF(int a, int b)
+        public static int GetTheGreatestCommonDivisor(int a, int b)
         {
             if (a % b == 0)
             {
@@ -13,17 +13,17 @@
             }
             else
             {
-                return GetGCF(b, a % b);
+                return GetTheGreatestCommonDivisor(b, a % b);
             }
         }
 
         static void Main()
         {
             Console.WriteLine("Введите 2 числа");
-            int a = Convert.ToInt32(Console.ReadLine());
-            int b = Convert.ToInt32(Console.ReadLine());
+            int firstNumber = Convert.ToInt32(Console.ReadLine());
+            int secondNumber = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Их НОД равен " + GetGCF(a, b));
+            Console.WriteLine("Их НОД равен " + GetTheGreatestCommonDivisor(firstNumber, secondNumber));
         }
     }
 }
