@@ -6,29 +6,33 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine("Введите число");
-        double n = Convert.ToDouble(Console.ReadLine());
-        Console.WriteLine("Простые числа:");
+        //Console.WriteLine("Введите число");
 
-        for (int i = 2; i <= n; i++)
-        {
-            bool isSimpleNumder = true;
+        using (StreamReader reader = new StreamReader("input.txt"))
+        {            
+            double n = Convert.ToDouble(reader.ReadLine());
 
-            for(int j = 2; j < i; j++)
+            Console.WriteLine("Простые числа:");
+
+            for (int i = 2; i <= n; i++)
             {
-                double x =(double) i % j;
-                if (x == 0)
+                bool isSimpleNumder = true;
+
+                for (int j = 2; j < i; j++)
                 {
-                    isSimpleNumder = false;
-                    break;
+                    double x = (double)i % j;
+                    if (x == 0)
+                    {
+                        isSimpleNumder = false;
+                        break;
+                    }
                 }
-            }
 
-            if (isSimpleNumder)
-            {
-                Console.WriteLine(i);
+                if (isSimpleNumder)
+                {
+                    Console.WriteLine(i);
+                }
             }
         }
     }
-
 }
