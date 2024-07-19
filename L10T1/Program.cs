@@ -5,14 +5,14 @@
     /// </summary>
     class Program
     {
-        public static int GetPowRek(int number, int degree)
+        public static int GetPowByRecursion(int number, int degree)
         {
             if (degree == 1)
             {
                 return number;
             }
 
-            return GetPowRek(number, degree - 1) * number;
+            return GetPowByRecursion(number, degree - 1) * number;
         }
 
         public static int GetPowFor(int number, int degree)
@@ -31,10 +31,11 @@
         {
             Console.WriteLine("Введите число и его степень");
             int number = Convert.ToInt32(Console.ReadLine());
+
             Console.WriteLine("Введите степень");
             int degree = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Число в степени равно = " + GetPowRek(number, degree));
+            Console.WriteLine("Число в степени равно = " + GetPowByRecursion(number, degree));
             Console.WriteLine("Число в степени равно = " + GetPowFor(number, degree));
         }
     }
