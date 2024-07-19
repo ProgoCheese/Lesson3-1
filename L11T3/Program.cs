@@ -1,7 +1,4 @@
-﻿using System.Data.SqlTypes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     /// <summary>
     /// нод
