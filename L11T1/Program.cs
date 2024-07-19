@@ -4,11 +4,11 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace Lesson3_1
 {
     /// <summary>
-    /// нод
+    /// поиск мин и сортировка 
     /// </summary>
     class Program
     {
-        public static int SearchMin(int[] a, int start)
+        public static int SearchMinArray(int[] a, int start)
         {
             int min = a[start];
             int minId = start;
@@ -25,11 +25,11 @@ namespace Lesson3_1
             return minId;
         }
 
-        public static void SortArr(int[] a)
+        public static void SortArray(int[] a)
         {
             for (int i = 0; i < a.Length; i++)
             {
-                int min = SearchMin(a, i);
+                int min = SearchMinArray(a, i);
 
                 int temp = a[i];
                 a[i] = a[min];
@@ -41,7 +41,7 @@ namespace Lesson3_1
         {
             int[] a = {2,5,8,1,32,975,23,0,42,66 };
 
-            SortArr(a);
+            SortArray(a);
 
             Console.WriteLine();
 
