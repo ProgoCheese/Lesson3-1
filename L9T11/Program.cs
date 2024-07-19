@@ -1,20 +1,17 @@
-﻿using System.Data.SqlTypes;
-using System;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     /// <summary>
     /// таблица умножения
     /// </summary>
     class Program
     {
-        public static int[,] SetMultiplicationTable(int x, int y)
+        public static int[,] SetMultiplicationTable(int length, int width)
         {
-            int[,] array = new int[x, y];
+            int[,] array = new int[length, width];
 
-            for (int i = 0; i < x; i++)
+            for (int i = 0; i < length; i++)
             {
-                for (int j = 0; j < y; j++)
+                for (int j = 0; j < width; j++)
                 {
                     array[i, j] = (i + 1) * (j + 1);
                 }
@@ -25,11 +22,13 @@ namespace Lesson3_1
 
         static void Main()
         {
-            Console.WriteLine("Введите размеры таблицы умножения");
-            var length = Console.ReadLine();
-            int tableLength = !String.IsNullOrEmpty(length) ? Convert.ToInt32(length) : 0;
-            var width = Console.ReadLine();
-            int tableWidth = !String.IsNullOrEmpty(width) ? Convert.ToInt32(width) : 0;
+            Console.WriteLine("Введите длину и ширину таблицы умножения");
+
+            string length = Console.ReadLine()!;
+            int tableLength = int.TryParse(length, out int numL) ? Convert.ToInt32(length) : 0;
+         
+            string width = Console.ReadLine()!;
+            int tableWidth = int.TryParse(width, out int numW) ? Convert.ToInt32(width) : 0;
 
             int[,] array = SetMultiplicationTable(tableLength, tableWidth);
 
@@ -39,6 +38,7 @@ namespace Lesson3_1
                 {
                     Console.Write(array[i, j] + " ");
                 }
+                
                 Console.WriteLine();
             }
         }
