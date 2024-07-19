@@ -1,7 +1,4 @@
-﻿using System.Data.SqlTypes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     /// <summary>
     /// поиск мин и сортировка 
@@ -25,7 +22,7 @@ namespace Lesson3_1
             return minId;
         }
 
-        public static void SortArray(int[] a)
+        public static void SortArrayAscend(int[] a)
         {
             for (int i = 0; i < a.Length; i++)
             {
@@ -39,15 +36,15 @@ namespace Lesson3_1
 
         static void Main()
         {
-            int[] a = {2,5,8,1,32,975,23,0,42,66 };
+            int[] a = { 2, 5, 8, 1, 32, 975, 23, 0, 42, 66 };
 
-            SortArray(a);
+            SortArrayAscend(a);
 
             Console.WriteLine();
 
             foreach (int i in a)
             {
-                Console.Write(i+" ");
+                Console.Write(i + " ");
             }
         }
     }
