@@ -1,44 +1,41 @@
-﻿using System.Data.SqlTypes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     /// <summary>
     /// нод
     /// </summary>
     class Program
     {
-        public static int BinarySearch(int[] a, int left, int right, int x)
+        public static int SearchIdBinary(int[] array, int left, int right, int number)
         {
             if (left > right)
             {
                 return -1;
             }
-            
+
             int middle = (right + left) / 2;
 
-            if (a[middle] == x)
+            if (array[middle] == number)
             {
                 return middle;
             }
-            else if(a[middle] < x)
+            else if (array[middle] < number)
             {
-                return BinarySearch(a, middle + 1, right, x);
+                return SearchIdBinary(array, middle + 1, right, number);
             }
             else
             {
-                return BinarySearch(a, left, middle - 1, x);
+                return SearchIdBinary(array, left, middle - 1, number);
             }
         }
 
         public static int BinarySearchFor(int[] a, int left, int right, int x)
         {
             int b = -1;
-            
+
             while (!(left > right))
             {
                 int middle = (right + left) / 2;
- 
+
                 if (a[middle] == x)
                 {
                     b = middle;
@@ -51,9 +48,7 @@ namespace Lesson3_1
                 else
                 {
                     right = middle - 1;
-                    //Console.WriteLine(middle);
                 }
-               // Console.WriteLine(right);
             }
 
             return b;
@@ -63,11 +58,10 @@ namespace Lesson3_1
         {
             int[] a = { 1, 2, 5, 8, 9, 12, 65, 67, 129 };
 
-            Console.WriteLine("Введите число");
+            Console.WriteLine("Введите число для поиска");
             int x = Convert.ToInt32(Console.ReadLine());
 
-            //Console.WriteLine(BinarySearch(a, 0, a.Length-1,x));
-            Console.WriteLine(BinarySearchFor(a, 0, a.Length-1,x));
+            Console.WriteLine("Результат " + BinarySearchFor(a, 0, a.Length - 1, x));
         }
     }
 }
