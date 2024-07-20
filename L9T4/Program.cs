@@ -41,36 +41,42 @@ namespace Lesson3_1
         {
             double[] array = [1, 6, 2, 0, 53, 1, 55, 32];
 
-            Console.WriteLine("Введите число: ");
-            string userString = Console.ReadLine()!;
-            bool isNumeric = true;
-
-            foreach (char c in userString)
+            while (true)
             {
-                if (!char.IsDigit(c))
+
+                Console.WriteLine("Введите число: ");
+                string userString = Console.ReadLine()!;
+                bool isNumeric = true;
+
+                foreach (char c in userString)
                 {
-                    isNumeric = false;
+                    if (!char.IsDigit(c))
+                    {
+                        isNumeric = false;
+                        break;
+                    }
+                }
+
+                if (!isNumeric || userString == "")
+                {
+                    Console.WriteLine("Попробуй снова");
+                }
+                else
+                {
+                    double number = Convert.ToDouble(userString);
+                    double maxNumber = SearchMax(array);
+
+                    int idNumber = GetIdNumber(array, number);
+
+                    foreach (double e in array)
+                    {
+                        Console.Write(e + " ");
+                    }
+
+                    Console.WriteLine($"Максимум {maxNumber}, нужное число индекс {idNumber}");
+
                     break;
                 }
-            }
-
-            if (!isNumeric || userString == "")
-            {
-                Console.WriteLine("Значит не судьба");
-            }
-            else
-            {
-                double number = Convert.ToDouble(userString);
-                double maxNumber = SearchMax(array);
-
-                int idNumber = GetIdNumber(array, number);
-
-                foreach (double e in array)
-                {
-                    Console.Write(e + " ");
-                }
-
-                Console.WriteLine($"Максимум {maxNumber}, нужное число индекс {idNumber}");
             }
         }
     }
