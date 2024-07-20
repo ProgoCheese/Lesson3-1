@@ -5,19 +5,17 @@
     /// </summary>
     class Program
     {
-        public static void SortArr(int[] a)
+        public static void SortArray(int[] a)
         {
-            for (int j = 0; j < a.Length - 1; j++)
+            for (int i = 0; i < a.Length - 1; i++)
             {
-                for (int i = 0; i < a.Length - j - 1; i++)
+                for (int j = 0; j < a.Length - i - 1; j++)
                 {
-                    if (a[i] > a[i + 1])
+                    if (a[j] > a[j + 1])
                     {
-                        int temp = a[i + 1];
-                        a[i + 1] = a[i];
-                        a[i] = temp;
-
-
+                        int temp = a[j + 1];
+                        a[j + 1] = a[j];
+                        a[j] = temp;
                     }
                 }
             }
@@ -25,13 +23,13 @@
 
         static void Main()
         {
-            int[] a = { 2, 5, 8, 1, 32, 975, 23, 0, 42, 66 };
+            int[] array = { 2, 5, 8, 1, 32, 975, 23, 0, 42, 66 };
 
-            SortArr(a);
+            SortArray(array);
 
             Console.WriteLine();
 
-            foreach (int i in a)
+            foreach (int i in array)
             {
                 Console.Write(i + " ");
             }
