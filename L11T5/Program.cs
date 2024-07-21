@@ -1,5 +1,8 @@
 ﻿namespace Lesson3_1
 {
+    /// <summary>
+    /// быстрая сортировка
+    /// </summary>
     class Program
     {
         static void Main()
