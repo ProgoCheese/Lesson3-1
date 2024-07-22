@@ -40,42 +40,52 @@ namespace Lesson3_1
         static void Main()
         {
             double[] array = [1, 6, 2, 0, 53, 1, 55, 32];
+            
+            double number = 0;
+            bool isNumeric = TryGetUserIntNumber(out number, "Введите число: ");
 
+            if (isNumeric)
+            {
+                double maxNumber = SearchMax(array);
+
+                int idNumber = GetIdNumber(array, number);
+
+                foreach (double e in array)
+                {
+                    Console.Write(e + " ");
+                }
+
+                Console.WriteLine($"Максимум {maxNumber}, нужное число индекс {idNumber}");
+            }
+        }
+
+        static bool TryGetUserIntNumber(out double userNumber, string line)
+        {
+            Console.WriteLine(line);
+
+            userNumber = 0;
             while (true)
             {
+                Console.Write("Введите целое число (или нажмите Esc для выхода): ");
+                string input = Console.ReadLine()!;
 
-                Console.WriteLine("Введите число: ");
-                string userString = Console.ReadLine()!;
-                bool isNumeric = true;
-
-                foreach (char c in userString)
+                // Проверка нажатия клавиши Esc
+                if (string.IsNullOrEmpty(input))
                 {
-                    if (!char.IsDigit(c))
+                    ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+                    if (keyInfo.Key == ConsoleKey.Escape)
                     {
-                        isNumeric = false;
-                        break;
+                        return false;
                     }
                 }
 
-                if (!isNumeric || userString == "")
+                if (double.TryParse(input, out userNumber))
                 {
-                    Console.WriteLine("Попробуй снова");
+                    return true;
                 }
                 else
                 {
-                    double number = Convert.ToDouble(userString);
-                    double maxNumber = SearchMax(array);
-
-                    int idNumber = GetIdNumber(array, number);
-
-                    foreach (double e in array)
-                    {
-                        Console.Write(e + " ");
-                    }
-
-                    Console.WriteLine($"Максимум {maxNumber}, нужное число индекс {idNumber}");
-
-                    break;
+                    Console.WriteLine("Ошибка ввода. Введите целое число без пробелов и любых других символов. Для выхода из программы нажмите Esc.");
                 }
             }
         }
