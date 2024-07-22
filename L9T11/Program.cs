@@ -24,24 +24,56 @@
         {
             Console.WriteLine("Введите размеры таблицы умножения");
 
-            Console.WriteLine("Введите целое число, соответствующее ширине таблице");
-            string length = Console.ReadLine()!;                        
-            int tableLength = int.TryParse(length, out tableLength) ? Convert.ToInt32(length) : 0;
+            int tableLength;
+            bool isLength = TryGetUserIntNumber(out tableLength, "Введите целое число, соответствующее ширине таблице");
 
-            Console.WriteLine("Введите целое число, соответствующее высоте таблице");
-            string width = Console.ReadLine()!;
-            int tableWidth = int.TryParse(width, out tableLength) ? Convert.ToInt32(width) : 0;
+            int tableWidth;
+            bool isWidth = TryGetUserIntNumber(out tableWidth, "Введите целое число, соответствующее высоте таблице");
 
-            int[,] array = SetMultiplicationTable(tableLength, tableWidth);
-
-            for (int i = 0; i < tableLength; i++)
+            if (isLength && isLength)
             {
-                for (int j = 0; j < tableWidth; j++)
+                int[,] array = SetMultiplicationTable(tableLength, tableWidth);
+
+                for (int i = 0; i < tableLength; i++)
                 {
-                    Console.Write(array[i, j] + " ");
+                    for (int j = 0; j < tableWidth; j++)
+                    {
+                        Console.Write(array[i, j] + " ");
+                    }
+
+                    Console.WriteLine();
+                }
+            }
+        }
+
+        static bool TryGetUserIntNumber(out int userNumber, string line)
+        {
+            Console.WriteLine(line);
+
+            userNumber = 0;
+            while (true)
+            {
+                Console.Write("Введите целое число (или нажмите Esc для выхода): ");
+                string input = Console.ReadLine()!;
+
+                // Проверка нажатия клавиши Esc
+                if (string.IsNullOrEmpty(input))
+                {
+                    ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+                    if (keyInfo.Key == ConsoleKey.Escape)
+                    {
+                        return false;
+                    }
                 }
 
-                Console.WriteLine();
+                if (int.TryParse(input, out userNumber))
+                {
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Ошибка ввода. Введите целое число без пробелов и любых других символов. Для выхода из программы нажмите Esc.");
+                }
             }
         }
     }
