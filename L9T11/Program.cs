@@ -22,13 +22,15 @@
 
         static void Main()
         {
-            Console.WriteLine("Введите длину и ширину таблицы умножения");
+            Console.WriteLine("Введите размеры таблицы умножения");
 
-            string length = Console.ReadLine()!;
-            int tableLength = int.TryParse(length, out int numL) ? Convert.ToInt32(length) : 0;
-         
+            Console.WriteLine("Введите целое число, соответствующее ширине таблице");
+            string length = Console.ReadLine()!;                        
+            int tableLength = int.TryParse(length, out tableLength) ? Convert.ToInt32(length) : 0;
+
+            Console.WriteLine("Введите целое число, соответствующее высоте таблице");
             string width = Console.ReadLine()!;
-            int tableWidth = int.TryParse(width, out int numW) ? Convert.ToInt32(width) : 0;
+            int tableWidth = int.TryParse(width, out tableLength) ? Convert.ToInt32(width) : 0;
 
             int[,] array = SetMultiplicationTable(tableLength, tableWidth);
 
@@ -38,7 +40,7 @@
                 {
                     Console.Write(array[i, j] + " ");
                 }
-                
+
                 Console.WriteLine();
             }
         }
