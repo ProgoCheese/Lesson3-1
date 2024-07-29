@@ -1,11 +1,11 @@
 ﻿namespace Lesson3_1
 {
     /// <summary>
-    /// нод
+    /// сортировака вставками
     /// </summary>
     class Program
     {
-        public static void SortArray(int[] array)
+        public static void SortArrayInserts(int[] array)
         {
             for (int i = 1; i < array.Length; i++)
             {
@@ -23,16 +23,17 @@
         {
             int[] array = [2, 5, 8, 1, 32, 975, 23, 0, 42, 66];
 
-            foreach (int i in array)
-            {
-                Console.Write(i + " ");
-            }
+            PrintArray(array);
 
-            SortArray(array);
+            SortArrayInserts(array);
 
-            Console.WriteLine();
-            Console.WriteLine("Отсортированный массив:");
+            Console.WriteLine("\nОтсортированный массив:");
 
+            PrintArray(array);
+        }
+
+        public static void PrintArray(int[] array)
+        {
             foreach (int i in array)
             {
                 Console.Write(i + " ");
