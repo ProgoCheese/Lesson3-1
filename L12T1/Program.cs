@@ -6,17 +6,17 @@ namespace Lesson3_1
     {
         static void Main()
         {
-            StringBuilder mySting = new StringBuilder();
+            StringBuilder myString = new();
 
-            mySting.Append(1);
+            myString.Append(1);
 
             for (int i = 2; i <= 100; i++)
             {
-                mySting.Append(",")
+                myString.Append(", ")
                     .Append(i);
             }
 
-            Console.WriteLine(mySting.ToString());
+            Console.WriteLine(myString.ToString());
         }
     }
 }
