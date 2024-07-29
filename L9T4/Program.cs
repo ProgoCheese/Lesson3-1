@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     /// <summary>
     /// max
@@ -22,7 +20,7 @@ namespace Lesson3_1
             return max;
         }
 
-        public static int GetIdNumber(double[] array, double number)
+        public static int GetNumberIndex(double[] array, double number)
         {
             int findedNumber = -1;
 
@@ -41,14 +39,13 @@ namespace Lesson3_1
         {
             double[] array = [1, 6, 2, 0, 53, 1, 55, 32];
             
-            double number = 0;
-            bool isNumeric = TryGetUserIntNumber(out number, "Введите число: ");
+            bool isNumeric = TryGetUserIntNumber(out double number, "Введите число: ");
 
             if (isNumeric)
             {
                 double maxNumber = SearchMax(array);
 
-                int idNumber = GetIdNumber(array, number);
+                int idNumber = GetNumberIndex(array, number);
 
                 foreach (double e in array)
                 {
@@ -57,27 +54,26 @@ namespace Lesson3_1
 
                 Console.WriteLine($"Максимум {maxNumber}, нужное число индекс {idNumber}");
             }
+            else
+            {
+                Console.WriteLine("До свидания!");
+            }
         }
 
         static bool TryGetUserIntNumber(out double userNumber, string line)
         {
-            Console.WriteLine(line);
-
             userNumber = 0;
             while (true)
             {
-                Console.Write("Введите целое число (или нажмите Esc для выхода): ");
-                string input = Console.ReadLine()!;
+                Console.WriteLine(line);
 
-                // Проверка нажатия клавиши Esc
-                if (string.IsNullOrEmpty(input))
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+                if (keyInfo.Key == ConsoleKey.Escape)
                 {
-                    ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-                    if (keyInfo.Key == ConsoleKey.Escape)
-                    {
-                        return false;
-                    }
+                    return false;
                 }
+
+                string input = Console.ReadLine()!;
 
                 if (double.TryParse(input, out userNumber))
                 {
@@ -85,7 +81,7 @@ namespace Lesson3_1
                 }
                 else
                 {
-                    Console.WriteLine("Ошибка ввода. Введите целое число без пробелов и любых других символов. Для выхода из программы нажмите Esc.");
+                    Console.WriteLine("Ошибка ввода.\nВведите целое число без пробелов и любых других символов.\nДля выхода из программы нажмите Esc, для повторного запуска — любую другую клавишу.");
                 }
             }
         }
