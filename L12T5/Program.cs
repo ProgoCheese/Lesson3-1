@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     class Program
     {
@@ -10,22 +8,21 @@ namespace Lesson3_1
 
             string file;
 
-            int countLine = 0;
+            int linesCount = 0;
 
-            using (StreamReader reader = new StreamReader("input.txt"))
+            using (StreamReader reader = new("input.txt"))
             {
-                while((file= reader.ReadLine()!) != null)
+                while ((file = reader.ReadLine()!) != null)
                 {
-                    if (countLine < lines.Length - 1)
+                    if (linesCount < lines.Length - 1)
                     {
-                        lines[countLine] = file;
-                        countLine++;
+                        lines[linesCount] = file;
+                        linesCount++;
                     }
                 }
             }
 
-
-            for(int i = 0; i < countLine; i++) 
+            for (int i = 0; i < linesCount; i++)
             {
                 Console.WriteLine(lines[i]);
             }
