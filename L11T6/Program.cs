@@ -4,7 +4,7 @@
     {
         public static void PyromidalSort(int[] array, int size)
         {
-            for(int i = (size/2); i >= 0; i--)
+            for (int i = (size / 2); i >= 0; i--)
             {
                 ConversionToHeap(array, i, size - 1);
             }
@@ -18,7 +18,7 @@
 
         public static void ConversionToHeap(int[] array, int root, int left)
         {
-            int maxChild = 0;
+            int maxChild;
 
             bool isDone = false;
 
