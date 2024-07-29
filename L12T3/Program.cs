@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Lesson3_1
+﻿namespace Lesson3_1
 {
     class Program
     {
@@ -52,6 +50,8 @@ namespace Lesson3_1
         //    return count;
         //}
 
+        //zjszh 1 o 2 9 1 njklu 1 - это input и он есть
+
         static void Main()
         {
             Console.WriteLine("Введите строку");
@@ -59,7 +59,7 @@ namespace Lesson3_1
 
             int count;
 
-            using (StreamReader reader = new StreamReader("input.txt"))
+            using (StreamReader reader = new("input.txt"))
             {
                 string file = reader.ReadLine()!;
 
