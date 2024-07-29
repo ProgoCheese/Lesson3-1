@@ -29,14 +29,14 @@
 
         static void Main()
         {
-            Console.WriteLine("Введите число и его степень");
+            Console.WriteLine("Введите число");
             int number = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Введите степень");
             int degree = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Число в степени равно = " + GetPowByRecursion(number, degree));
-            Console.WriteLine("Число в степени равно = " + GetPowFor(number, degree));
+            Console.WriteLine($"Число {number} в степени {degree} равно {GetPowByRecursion(number, degree)}, сделано рекурсией");
+            Console.WriteLine($"Число {number} в степени {degree} равно {GetPowFor(number, degree)}, сделано циклом");
         }
     }
 }
