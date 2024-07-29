@@ -5,7 +5,7 @@
     /// </summary>
     class Program
     {
-        public static int SearchMinArray(int[] a, int start)
+        public static int GetNumbersMinimum(int[] a, int start)
         {
             int min = a[start];
             int minId = start;
@@ -26,7 +26,7 @@
         {
             for (int i = 0; i < a.Length; i++)
             {
-                int min = SearchMinArray(a, i);
+                int min = GetNumbersMinimum(a, i);
 
                 int temp = a[i];
                 a[i] = a[min];
@@ -40,7 +40,7 @@
 
             SortArrayAscend(a);
 
-            Console.WriteLine();
+            Console.WriteLine("Результат сортировки массива методом выбором:");
 
             foreach (int i in a)
             {
