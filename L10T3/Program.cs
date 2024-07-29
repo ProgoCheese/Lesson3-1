@@ -5,14 +5,14 @@
     /// </summary>
     class Program
     {
-        public static int SearchIdBinary(int[] array, int left, int right, int number)
+        public static int SeekBinaryIndex(int[] array, int bottom, int top, int number)
         {
-            if (left > right)
+            if (bottom > top)
             {
                 return -1;
             }
 
-            int middle = (right + left) / 2;
+            int middle = (top + bottom) / 2;
 
             if (array[middle] == number)
             {
@@ -20,48 +20,48 @@
             }
             else if (array[middle] < number)
             {
-                return SearchIdBinary(array, middle + 1, right, number);
+                return SeekBinaryIndex(array, middle + 1, top, number);
             }
             else
             {
-                return SearchIdBinary(array, left, middle - 1, number);
+                return SeekBinaryIndex(array, bottom, middle - 1, number);
             }
         }
 
-        public static int BinarySearchFor(int[] a, int left, int right, int x)
+        public static int BinarySearchFor(int[] array, int bottom, int top, int userNumber)
         {
-            int b = -1;
+            int number = -1;
 
-            while (!(left > right))
+            while (!(bottom > top))
             {
-                int middle = (right + left) / 2;
+                int middle = (top + bottom) / 2;
 
-                if (a[middle] == x)
+                if (array[middle] == userNumber)
                 {
-                    b = middle;
+                    number = middle;
                     break;
                 }
-                else if (a[middle] < x)
+                else if (array[middle] < userNumber)
                 {
-                    left = middle + 1;
+                    bottom = middle + 1;
                 }
                 else
                 {
-                    right = middle - 1;
+                    top = middle - 1;
                 }
             }
 
-            return b;
+            return number;
         }
 
         static void Main()
         {
-            int[] a = { 1, 2, 5, 8, 9, 12, 65, 67, 129 };
+            int[] array = { 1, 2, 5, 8, 9, 12, 65, 67, 129 };
 
-            Console.WriteLine("Введите число для поиска");
-            int x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите целое число, которое программа будет искать в массиве.");
+            int number = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Результат " + BinarySearchFor(a, 0, a.Length - 1, x));
+            Console.WriteLine("Результат бинарного поиска: Число {0} в массиве под индексом {1}", number, BinarySearchFor(array, 0, array.Length - 1, number));
         }
     }
 }
