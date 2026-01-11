@@ -10,14 +10,17 @@
 
             int countLine = 0;
 
-            using StreamReader reader = new("input.txt");
-            using StreamWriter writer = new("output.txt");
-
-            while ((file = reader.ReadLine()!) != null)
+            using (StreamReader reader = new StreamReader("input.txt"))
             {
-                if (countLine < lines.Length - 1)
+                using (StreamWriter writer = new StreamWriter("output.txt"))
                 {
-                    writer.WriteLine(file.ToUpper());
+                    while ((file = reader.ReadLine()!) != null)
+                    {
+                        if (countLine < lines.Length - 1)
+                        {
+                            writer.WriteLine(file.ToUpper());
+                        }
+                    }
                 }
             }
         }

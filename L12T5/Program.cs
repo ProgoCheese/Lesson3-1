@@ -4,7 +4,7 @@
     {
         static void Main()
         {
-            string[] lines = new string[100];
+            string[] lines = new string[10];
 
             string file;
 

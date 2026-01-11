@@ -6,8 +6,6 @@ class Program
 {
     static void Main()
     {
-        //Console.WriteLine("Введите число");
-
         using (StreamReader reader = new StreamReader("input.txt"))
         {            
             double n = Convert.ToDouble(reader.ReadLine());

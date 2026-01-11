@@ -5,14 +5,14 @@
     /// </summary>
     class Program
     {
-        public static int SeekBinaryIndex(int[] array, int bottom, int top, int number)
+        public static int SeekBinaryIndex(int[] array, int firstNimber, int lastNumber, int number)
         {
-            if (bottom > top)
+            if (firstNimber > lastNumber)
             {
                 return -1;
             }
 
-            int middle = (top + bottom) / 2;
+            int middle = (lastNumber + firstNimber) / 2;
 
             if (array[middle] == number)
             {
@@ -20,21 +20,21 @@
             }
             else if (array[middle] < number)
             {
-                return SeekBinaryIndex(array, middle + 1, top, number);
+                return SeekBinaryIndex(array, middle + 1, lastNumber, number);
             }
             else
             {
-                return SeekBinaryIndex(array, bottom, middle - 1, number);
+                return SeekBinaryIndex(array, firstNimber, middle - 1, number);
             }
         }
 
-        public static int BinarySearchFor(int[] array, int bottom, int top, int userNumber)
+        public static int BinarySearchFor(int[] array, int firstNimber, int lastNumber, int userNumber)
         {
             int number = -1;
 
-            while (!(bottom > top))
+            while (!(firstNimber > lastNumber))
             {
-                int middle = (top + bottom) / 2;
+                int middle = (lastNumber + firstNimber) / 2;
 
                 if (array[middle] == userNumber)
                 {
@@ -43,11 +43,11 @@
                 }
                 else if (array[middle] < userNumber)
                 {
-                    bottom = middle + 1;
+                    firstNimber = middle + 1;
                 }
                 else
                 {
-                    top = middle - 1;
+                    lastNumber = middle - 1;
                 }
             }
 
